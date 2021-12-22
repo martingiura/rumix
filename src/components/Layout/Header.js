@@ -13,21 +13,21 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="bg-black">
+    <header className="bg-blue-600">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
-        <div className="w-full py-6 flex items-center justify-between border-b border-indigo-500 lg:border-none">
+        <div className="w-full py-6 flex items-left justify-between border-b border-indigo-500 lg:border-none">
           <div className="flex items-center">
             <Link to="/">
               <img
-                className="h-10 w-auto"
-                src="https://cdn.worldvectorlogo.com/logos/ironhack-1.svg"
+                className="h-20 w-auto"
+                src="https://i.ibb.co/yFgRYsh/Rumix-blanco.png"
                 alt=""
               />
             </Link>
             <div className="ml-10 space-x-8 lg:block">
               <Link
                 to="/users"
-                className="text-base font-medium text-white hover:text-indigo-50"
+                className="text-base font-medium text-white hover:text-indigo-50 bg-orange-400"
               >
                 Buscar Roomates
               </Link>
@@ -50,7 +50,7 @@ export default function Header() {
               <>
                 <Link
                   to="/profile"
-                  className="text-base font-medium text-white hover:text-indigo-50"
+                  className="text-base font-medium text-white hover:text-indigo-50 mr-8"
                 >
                   Tu perfil
                 </Link>

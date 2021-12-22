@@ -156,12 +156,11 @@ const UserState = (props) => {
   const deleteUser = async (idUser) => {
     const res = await axiosClient.delete(`users/delete/${idUser}`);
 
-    const _id = res.data.data._id;
-
     dispatch({
       type: "DELETE_USER",
-      payload: _id,
     });
+
+    res.redirect("/registro");
   };
 
   // 4. RETORNO

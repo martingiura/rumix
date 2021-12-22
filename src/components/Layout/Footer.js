@@ -3,11 +3,11 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div class="h-10 bg-blue-500">
-      <footer className="bg-white">
+    <div class="h-10 ">
+      <footer className="bg-blue-600">
         <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
           <div className="mt-8 flex justify-center space-x-6">
-            <a href="#" className="text-gray-400 hover:text-gray-500">
+            <a href="#" className="text-white hover:text-orange-600">
               <span className="sr-only">Facebook</span>
               <svg
                 className="h-6 w-6"
@@ -23,7 +23,7 @@ export default function Footer() {
               </svg>
             </a>
 
-            <a href="#" className="text-gray-400 hover:text-gray-500">
+            <a href="#" className="text-white hover:text-orange-600">
               <span className="sr-only">Instagram</span>
               <svg
                 className="h-6 w-6"
@@ -39,7 +39,7 @@ export default function Footer() {
               </svg>
             </a>
 
-            <a href="#" className="text-gray-400 hover:text-gray-500">
+            <a href="#" className="text-white hover:text-orange-600">
               <span className="sr-only">Twitter</span>
               <svg
                 className="h-6 w-6"
@@ -51,12 +51,12 @@ export default function Footer() {
               </svg>
             </a>
           </div>
-          <p className="mt-8 text-center text-base text-gray-400">
-            &copy; 2021. Todos los derechos reservados.
+          <p className="mt-8 text-center text-base text-white">
+            &copy; 2022. Rumix, todos los derechos reservados.
           </p>
-          <p className="text-center text-base text-gray-400">
-            Esta es una tienda electrónica ficticia con objetivos académicos y
-            de aprendizaje.
+          <p className="text-center text-base text-white">
+            Rumix es la aplicación para encontrar un compañero de piso confiable
+            y compartir gastos.
           </p>
         </div>
       </footer>

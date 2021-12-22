@@ -1,16 +1,16 @@
 import Footer2 from "../Footer2";
 import React, { useContext, useEffect } from "react";
 import UserContext from "../../context/User/UserContext";
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, useParams, Redirect } from "react-router-dom";
 
-export default function Profile() {
+export default function Profile({ authorized }) {
   const ctx = useContext(UserContext);
-  const { getUser, singleUser, currentUser } = ctx;
+  const { getUser, singleUser, currentUser, deleteUser } = ctx;
   const params = useParams();
   const id = params.id;
+  const userId = currentUser._id;
   useEffect(() => {
-    getUser(currentUser._id);
+    getUser(userId);
   }, []);
   return (
     <>
@@ -67,13 +67,22 @@ export default function Profile() {
                     <div className="py-6 px-3 mt-32 sm:mt-0">
                       <Link to={`/users/${currentUser._id}/editar`}>
                         <button
-                          className="bg-pink-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
+                          className="bg-blue-600 active:bg-orange-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
                           type="button"
                           style={{ transition: "all .15s ease" }}
                         >
                           Editar Perfil
                         </button>
                       </Link>
+                      {/* <Link to={`/`}> */}
+                      <button
+                        onClick={() => deleteUser(userId)}
+                        type="button"
+                        class="bg-red-600 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
+                      >
+                        Eliminar Cuenta
+                      </button>
+                      {/* </Link> */}
                     </div>
                   </div>
                   <div className="w-full lg:w-4/12 px-4 lg:order-1">
@@ -113,19 +122,17 @@ export default function Profile() {
                   </div>
                   <div className="mb-2 text-gray-700 mt-10">
                     <i className="fas fa-briefcase mr-2 text-lg text-gray-500"></i>
-                    Solution Manager - Creative Tim Officer
+                    {singleUser.profileSummary}
                   </div>
                   <div className="mb-2 text-gray-700">
                     <i className="fas fa-university mr-2 text-lg text-gray-500"></i>
-                    University of Computer Science
+                    {singleUser.profileDescription}
                   </div>
                 </div>
                 <div className="mt-10 py-10 border-t border-gray-300 text-center">
                   <div className="flex flex-wrap justify-center">
                     <div className="w-full lg:w-9/12 px-4">
-                      <p className="mb-4 text-lg leading-relaxed text-gray-800">
-                        {singleUser.profileDescription}
-                      </p>
+                      <p className="mb-4 text-lg leading-relaxed text-gray-800"></p>
                       <a
                         href="#pablo"
                         className="font-normal text-pink-500"
