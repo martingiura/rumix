@@ -2,22 +2,20 @@
 
 import React, { useState, useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import GuitarContext from "../../../context/Guitar/GuitarContext";
+import RoomContext from "../../../context/Room/RoomContext";
 
-export default function Edit() {
+export default function EditRoom() {
   // 1. ESTADO GLOBAL
   const params = useParams();
-  const idGuitar = params.id;
+  const idRoom = params.id;
 
-  const ctx = useContext(GuitarContext);
+  const ctx = useContext(RoomContext);
 
-  const { singleGuitar, getGuitar, updateGuitar } = ctx;
-
+  const { singleRoom, getRoom, updateRoom } = ctx;
   // 2. ESTADO LOCAL
-  const [guitarData, setGuitarData] = useState({
+  const [roomData, setRoomData] = useState({
     nombre: "",
     precio: "",
-    color: "",
     imagen: "",
     descripcion: "",
   });
@@ -26,27 +24,26 @@ export default function Edit() {
 
   // USEEFFECT PARA ACTUALIZAR DATOS EN EL ESTADO GLOBAL
   useEffect(() => {
-    getGuitar(idGuitar);
+    getRoom(idRoom);
   }, []);
 
   // USEEFFECT PARA ACTUALIZAR LOS DATOS DEL ESTADO GLOBAL AL ESTADO LOCAL
   useEffect(() => {
-    const { nombre, precio, color, imagen, descripcion } = ctx.singleGuitar;
+    const { nombre, precio, imagen, descripcion } = ctx.singleRoom;
 
-    setGuitarData({
+    setRoomData({
       nombre: nombre,
       precio: precio,
-      color: color,
       imagen: imagen,
       descripcion: descripcion,
     });
-  }, [singleGuitar]);
+  }, [singleRoom]);
 
   const handleChange = (e) => {
     e.preventDefault();
 
-    setGuitarData({
-      ...guitarData,
+    setRoomData({
+      ...roomData,
       [e.target.name]: e.target.value,
     });
   };
@@ -54,7 +51,7 @@ export default function Edit() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    updateGuitar(guitarData, idGuitar);
+    updateRoom(roomData, idRoom);
   };
 
   return (
@@ -68,7 +65,7 @@ export default function Edit() {
           <div class="bg-white py-6 px-4 space-y-6 sm:p-6">
             <div>
               <h3 class="text-lg leading-6 font-medium text-gray-900">
-                Editar guitarra
+                Editar Habitacion
               </h3>
               <p class="mt-1 text-sm text-gray-500">
                 Use a permanent address where you can recieve mail.
@@ -89,7 +86,7 @@ export default function Edit() {
                   }}
                   type="text"
                   name="nombre"
-                  value={guitarData.nombre}
+                  value={roomData.nombre}
                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 />
               </div>
@@ -107,7 +104,7 @@ export default function Edit() {
                   }}
                   type="number"
                   name="precio"
-                  value={guitarData.precio}
+                  value={roomData.precio}
                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 />
               </div>
@@ -125,29 +122,9 @@ export default function Edit() {
                   onChange={(event) => {
                     handleChange(event);
                   }}
-                  value={guitarData.imagen}
+                  value={roomData.imagen}
                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 />
-              </div>
-
-              <div class="col-span-6 sm:col-span-4">
-                <label
-                  for="country"
-                  class="block text-sm font-medium text-gray-700"
-                >
-                  Color
-                </label>
-                <select
-                  onChange={(event) => {
-                    handleChange(event);
-                  }}
-                  name="color"
-                  class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                >
-                  <option value={""}>---</option>
-                  <option value={"Blanco con negro"}>Blanco con Negro</option>
-                  <option value={"Rojo con blanco"}>Rojo con Blanco</option>
-                </select>
               </div>
 
               <div class="col-span-6 sm:col-span-6 lg:col-span-4">
@@ -162,7 +139,7 @@ export default function Edit() {
                     handleChange(event);
                   }}
                   type="text"
-                  value={guitarData.descripcion}
+                  value={roomData.descripcion}
                   name="descripcion"
                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 />
@@ -174,7 +151,7 @@ export default function Edit() {
               type="submit"
               class="bg-indigo-600 border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              Guardar guitarra
+              Guardar Habitación
             </button>
           </div>
         </div>

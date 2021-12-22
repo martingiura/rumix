@@ -1,20 +1,20 @@
 // ./client/src/components/Guitars/index.js
 import React, { useEffect, useContext } from "react";
-import GuitarContext from "./../../context/Guitar/GuitarContext";
+import RoomContext from "../../context/Room/RoomContext";
 
 import { Link } from "react-router-dom";
 
-export default function Guitars() {
+export default function Rooms() {
   // ESTADO GLOBAL
-  const ctx = useContext(GuitarContext);
+  const ctx = useContext(RoomContext);
 
-  const { guitars, hola, changeText, getGuitars } = ctx;
+  const { rooms, getRooms } = ctx;
 
   // ESTADO LOCAL
 
   // EL MOMENTO EN QUE SE EJECUTA EL USE EFFECT ES DESPUÉS DEL RETURN.
   useEffect(() => {
-    getGuitars();
+    getRooms();
   }, []); // CUANDO HAY UN ARREGLO VACÍO, SIGNIFICA QUE VA A EJECUTARSE UNA SOLA VEZ.
 
   return (
@@ -23,16 +23,16 @@ export default function Guitars() {
         <div class="md:flex md:items-center md:justify-between">
           <div class="flex-1 min-w-0">
             <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
-              Listado de Guitarras
+              Listado de Habitaciones disponibles en Ciudad de México
             </h2>
           </div>
           <div class="mt-4 flex md:mt-0">
-            <Link to="/guitarras/crear">
+            <Link to="/rooms/crear">
               <button
                 type="button"
-                class="ml-3 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                class="ml-3 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
-                Crear guitarra
+                Publicar Habitación
               </button>
             </Link>
           </div>
@@ -41,22 +41,22 @@ export default function Guitars() {
         <div class="bg-white">
           <div>
             <div class="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-              {guitars.map((element) => {
+              {rooms.map((element) => {
                 return (
                   <>
                     <div class="">
                       <div class="rounded-lg bg-gray-200 aspect-w-1 aspect-h-1 group-hover:opacity-75">
-                        <Link to={`/guitarras/${element._id}`}>
+                        <Link to={`/rooms/${element._id}`}>
                           <img
                             src={element.imagen}
-                            alt="Imagen de guitarra"
+                            alt="Imagen de Habitacion"
                             class="w-full h-full object-center object-cover"
                           />
                         </Link>
                       </div>
                       <div class="pt-10 pb-4 text-center">
                         <h3 class="text-sm font-medium text-gray-900">
-                          <Link to={`/guitarras/${element._id}`}>
+                          <Link to={`/rooms/${element._id}`}>
                             {element.nombre}
                           </Link>
                         </h3>

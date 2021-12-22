@@ -1,25 +1,25 @@
 import React, { useContext, useEffect } from "react";
-import GuitarContext from "../../../context/Guitar/GuitarContext";
+import RoomContext from "../../../context/Room/RoomContext";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-export default function Single() {
-  const ctx = useContext(GuitarContext);
-  const { getGuitar, singleGuitar } = ctx;
+export default function SingleRoom() {
+  const ctx = useContext(RoomContext);
+  const { getRoom, singleRoom } = ctx;
   const params = useParams();
   const id = params.id;
   useEffect(() => {
-    getGuitar(id);
+    getRoom(id);
   }, []);
   return (
     <>
       <div>
         <div class="mt-4 flex md:mt-0">
-          <Link to={`/guitarras/${id}/editar`}>
+          <Link to={`/rooms/${id}/editar`}>
             <button
               type="button"
               class="ml-3 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              Editar guitarra
+              Editar Habitacion
             </button>
           </Link>
         </div>
@@ -32,10 +32,10 @@ export default function Single() {
                   <li>
                     <div className="flex items-center text-sm">
                       <Link
-                        to="/guitarras"
+                        to="/rooms"
                         className="font-medium text-gray-500 hover:text-gray-900"
                       >
-                        Guitarras
+                        Habitaciones
                       </Link>
                       <svg
                         viewBox="0 0 20 20"
@@ -62,7 +62,7 @@ export default function Single() {
               </nav>
               <div className="mt-4">
                 <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                  {singleGuitar.nombre}
+                  {singleRoom.nombre}
                 </h1>
               </div>
               <section aria-labelledby="information-heading" className="mt-4">
@@ -71,7 +71,7 @@ export default function Single() {
                 </h2>
                 <div className="flex items-center">
                   <p className="text-lg text-gray-900 sm:text-xl">
-                    MXN ${singleGuitar.precio}
+                    MXN ${singleRoom.precio}
                   </p>
                   <div className="ml-4 pl-4 border-l border-gray-300">
                     <h2 className="sr-only">Reviews</h2>
@@ -132,7 +132,7 @@ export default function Single() {
                 </div>
                 <div className="mt-4 space-y-6">
                   <p className="text-base text-gray-500">
-                    {singleGuitar.description}
+                    {singleRoom.description}
                   </p>
                 </div>
                 <div className="mt-6 flex items-center">
@@ -158,7 +158,7 @@ export default function Single() {
             <div className="mt-10 lg:mt-0 lg:col-start-2 lg:row-span-2 lg:self-center">
               <div className="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
                 <img
-                  src={singleGuitar.imagen}
+                  src={singleRoom.imagen}
                   alt="Imagen de guitarra"
                   className="w-full h-full object-center object-cover"
                 />

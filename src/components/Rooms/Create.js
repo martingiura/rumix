@@ -1,18 +1,17 @@
 // ./new-client/src/components/Guitars/Create.js
 
 import React, { useState, useContext } from "react";
-import GuitarContext from "./../../context/Guitar/GuitarContext";
+import RoomContext from "../../context/Room/RoomContext";
 
-export default function Create() {
+export default function CreateRoom() {
   // 1. ESTADO GLOBAL
-  const ctx = useContext(GuitarContext);
-  const { createGuitar } = ctx;
+  const ctx = useContext(RoomContext);
+  const { createRoom } = ctx;
 
   // 2. ESTADO LOCAL
-  const [newGuitar, setNewGuitar] = useState({
+  const [newRoom, setNewRoom] = useState({
     nombre: "",
     precio: "",
-    color: "",
     imagen: "",
     descripcion: "",
   });
@@ -21,8 +20,8 @@ export default function Create() {
   const handleChange = (e) => {
     e.preventDefault();
 
-    setNewGuitar({
-      ...newGuitar,
+    setNewRoom({
+      ...newRoom,
       [e.target.name]: e.target.value,
     });
   };
@@ -30,7 +29,7 @@ export default function Create() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    createGuitar(newGuitar);
+    createRoom(newRoom);
   };
 
   return (
@@ -102,27 +101,6 @@ export default function Create() {
                   className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 />
               </div>
-
-              <div className="col-span-6 sm:col-span-4">
-                <label
-                  for="country"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Color
-                </label>
-                <select
-                  onChange={(event) => {
-                    handleChange(event);
-                  }}
-                  name="color"
-                  className="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                >
-                  <option value={""}>---</option>
-                  <option value={"Blanco con negro"}>Blanco con Negro</option>
-                  <option value={"Rojo con blanco"}>Rojo con Blanco</option>
-                </select>
-              </div>
-
               <div className="col-span-6 sm:col-span-6 lg:col-span-4">
                 <label
                   for="city"
@@ -146,7 +124,7 @@ export default function Create() {
               type="submit"
               className="bg-indigo-600 border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              Guardar guitarra
+              Guardar Habitacion
             </button>
           </div>
         </div>
