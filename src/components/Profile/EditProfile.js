@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import UserContext from "../../context/User/UserContext";
 
 export default function EditProfile() {
@@ -114,11 +114,13 @@ export default function EditProfile() {
       [e.target.name]: e.target.value,
     });
   };
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     updateUser(userData, idUser);
+    navigate("/profile/");
   };
 
   return (

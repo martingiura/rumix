@@ -32,14 +32,14 @@ export default function Register() {
   };
 
   return (
-    <div className="flex flex-col justify-center py-12 sm:px-6 lg:px-8 mt-12">
-      <div className="sm:mx-auto sm:w-full sm:max-w-md ">
+    <div className="bg-repeat h-full flex flex-col justify-center py-12 sm:px-6 lg:px-8 mt-12 bg-[url('https://i.ibb.co/Hh7BLD2/pagina-registro-rumix.jpg')]">
+      <div className="sm:mx-auto sm:w-full sm:max-w-md bg-blue-400">
         <img
           className="mx-auto h-12 w-auto"
           src="https://i.ibb.co/yFgRYsh/Rumix-blanco.png"
         />
-        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Crea tu cuenta
+        <h2 className="mt-2 text-center text-3xl font-extrabold text-orange-100">
+          Creá tu cuenta
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
           ¿Ya tienes cuenta? &nbsp;
@@ -51,8 +51,8 @@ export default function Register() {
         </p>
       </div>
 
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-blue-600 py-8 px-4 shadow sm:rounded-lg sm:px-10">
+      <div className="mt-0 sm:mx-auto sm:w-full sm:max-w-md">
+        <div className="bg-blue-400 py-8 px-4 shadow sm:px-10">
           <form
             onSubmit={(event) => {
               handleSubmit(event);

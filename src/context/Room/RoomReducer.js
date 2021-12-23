@@ -12,7 +12,7 @@ const reducer = (globalState, action) => {
     case "GET_ROOMS":
       return {
         ...globalState,
-        guitars: action.payload,
+        rooms: action.payload,
       };
 
     default:

@@ -1,6 +1,7 @@
 // ./new-client/src/components/Guitars/Create.js
 
 import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import RoomContext from "../../context/Room/RoomContext";
 
 export default function CreateRoom() {
@@ -26,12 +27,14 @@ export default function CreateRoom() {
     });
   };
 
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
 
     createRoom(newRoom);
+    navigate("/rooms/");
   };
-
   return (
     <>
       <form
@@ -43,11 +46,9 @@ export default function CreateRoom() {
           <div className="bg-white py-6 px-4 space-y-6 sm:p-6">
             <div>
               <h3 className="text-lg leading-6 font-medium text-gray-900">
-                Personal Information
+                Anuncia tu Habitación en Ciudad de México
               </h3>
-              <p className="mt-1 text-sm text-gray-500">
-                Use a permanent address where you can recieve mail.
-              </p>
+              <p className="mt-1 text-sm text-gray-500"></p>
             </div>
 
             <div className="grid grid-cols-6 gap-6">
@@ -56,7 +57,7 @@ export default function CreateRoom() {
                   for="first-name"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Nombre
+                  Título de tu publicación:
                 </label>
                 <input
                   onChange={(event) => {
@@ -122,9 +123,9 @@ export default function CreateRoom() {
           <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
             <button
               type="submit"
-              className="bg-indigo-600 border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="bg-blue-600 border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-white hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              Guardar Habitacion
+              Publicar Habitación
             </button>
           </div>
         </div>

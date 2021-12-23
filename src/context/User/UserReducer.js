@@ -46,11 +46,10 @@ const reducer = (globalState, action) => {
 
     case "DELETE_USER":
       localStorage.removeItem("token");
+
       return {
         ...globalState,
-        user: null,
-        authStatus: null,
-        msg: action.payload,
+        authStatus: false,
       };
 
     default:

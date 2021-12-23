@@ -43,16 +43,31 @@ const Router = () => {
                 />
                 {/* localhost:3000/guitarras */}
                 {/* <Route path="guitarras" element={<Public component={Guitars} />} /> */}
-                <Route path="rooms" element={<Rooms />} />
+                <Route path="rooms" element={<Private component={Rooms} />} />
 
                 {/* localhost:3000/guitarras/crear */}
-                <Route path="rooms/crear" element={<CreateRoom />} />
+                <Route
+                  path="rooms/crear"
+                  element={<Private component={CreateRoom} />}
+                />
                 {/* localhost:3000/guitarras/:id */}
-                <Route path="rooms/:id" element={<SingleRoom />} />
-                <Route path="rooms/:id/editar" element={<EditRoom />} />
-                <Route path="users" element={<Users />} />
-                <Route path="users/:id" element={<SingleUser />} />
-                <Route path="users/:id/editar" element={<EditProfile />} />
+                <Route
+                  path="rooms/:id"
+                  element={<Private component={SingleRoom} />}
+                />
+                <Route
+                  path="rooms/:id/editar"
+                  element={<Private component={EditRoom} />}
+                />
+                <Route path="users" element={<Private component={Users} />} />
+                <Route
+                  path="users/:id"
+                  element={<Private component={SingleUser} />}
+                />
+                <Route
+                  path="users/:id/editar"
+                  element={<Private component={EditProfile} />}
+                />
                 {/* localhost:3000/guitarras/:id/editar */}
 
                 {/* localhost:3000/profile */}
