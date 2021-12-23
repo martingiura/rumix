@@ -1,7 +1,7 @@
 //./src/components/Guitars/Single/Edit.js
 
 import React, { useState, useContext, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import RoomContext from "../../../context/Room/RoomContext";
 
 export default function EditRoom() {
@@ -47,11 +47,13 @@ export default function EditRoom() {
       [e.target.name]: e.target.value,
     });
   };
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     updateRoom(roomData, idRoom);
+    navigate("/rooms");
   };
 
   return (

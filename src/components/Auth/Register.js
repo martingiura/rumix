@@ -1,6 +1,6 @@
 // ./client/src/Auth/Register.js
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import UserContext from "./../../context/User/UserContext";
 
 export default function Register() {
@@ -24,13 +24,13 @@ export default function Register() {
       [e.target.name]: e.target.value,
     });
   };
-
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
 
     registerUser(newUser);
+    navigate("/profile/");
   };
-
   return (
     <div className="bg-repeat h-full flex flex-col justify-center py-12 sm:px-6 lg:px-8 mt-12 bg-[url('https://i.ibb.co/Hh7BLD2/pagina-registro-rumix.jpg')]">
       <div className="sm:mx-auto sm:w-full sm:max-w-md bg-blue-400">
