@@ -381,6 +381,28 @@ export default function EditProfile() {
                 </p>
               </div>
               <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+                <div className="sm:col-span-4">
+                  <label
+                    htmlFor="age"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Edad
+                  </label>
+                  <div className="mt-1">
+                    <input
+                      onChange={(event) => {
+                        handleChange(event);
+                      }}
+                      type="number"
+                      name="age"
+                      id="age"
+                      value={userData.age}
+                      autoComplete="18"
+                      className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                    />
+                  </div>
+                </div>
+
                 <div className="sm:col-span-3">
                   <label
                     htmlFor="first-name"
