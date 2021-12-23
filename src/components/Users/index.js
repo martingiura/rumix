@@ -45,7 +45,7 @@ export default function Users() {
                           alt="avatar"
                         />
                       </Link>
-                      <div className="flex items-center px-6 py-3 bg-gray-900">
+                      <div className="flex items-center px-6 py-3 bg-blue-600">
                         <svg
                           className="h-6 w-6 text-white fill-current"
                           viewBox="0 0 512 512"
