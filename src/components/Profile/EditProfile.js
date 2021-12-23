@@ -295,7 +295,7 @@ export default function EditProfile() {
                 </div>
 
                 <div className="sm:col-span-4">
-                  <label htmlFor="smokingPreferences" className="block mt-4">
+                  <label htmlFor="petsPreferences" className="block mt-4">
                     ¿Cuál es tu opinión sobre las mascotas?
                     <span className="text-gray-700"></span>
                     <select
