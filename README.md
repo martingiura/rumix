@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+**_Inicio de la app_**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Rumix es la aplicación para encontrar un compañero de piso confiable y compartir gastos en esa ciudad que tu quieres vivir.
 
-## Available Scripts
+En Rumix se encuentran dos modelos. Los USERS que son aquellos que se crean una cuenta para buscar un roomie y el modelo de los ROOMS que son las habitaciones disponibles en tu ciudad.
 
-In the project directory, you can run:
+Actualmente la aplicacion esta disponible solo para Ciudad de Mexico, pero las ciudades iran aumentando a medida que nos expandimos. (23 de Dic 2021)
 
-### `npm start`
+Rutas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**USUARIOS**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Variables en usuario para consultar.
 
-### `npm test`
+    nombre,
+    apellido,
+    pais,
+    direccion,
+    email,
+    imageUrl,
+    telefono,
+    rol,
+    roomatesWishList,
+    profileIsPublic,
+    verifiedStatus,
+    genre,
+    age,
+    favoriteRooms,
+    profileSummary,
+    profileDescription,
+    prefferedLocation,
+    movingDate,
+    budget,
+    frequencyCleaningRoom,
+    smokingPreferences,
+    petsPreferences,
+    visitPreferences,
+    acceptedConnections
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**//.1 Crear Usuario**
+https://rumix-backend.herokuapp.com/users/create
 
-### `npm run build`
+{
+"nombre": "Dulce",
+"apellido": "Fabiola",
+"pais": "México",
+"direccion": "450",
+"email": "correoejemplo@gmail.com",
+"password": "",
+"prefferedLocation": "Ciudad de Mexico",
+"imageUrl": "https://i.ibb.co/XF1wSqX/dulce-fabiola.jpg",
+"profileSummary": "Senior Web Developer",
+"age": 26
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**//.2 Leer Usuarios**
+https://rumix-backend.herokuapp.com/users/readall
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**//.3 Editar Usuarios**
+https://rumix-backend.herokuapp.com/users/edit/:id
 
-### `npm run eject`
+**ROOMS (Habitaciones)**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Variables de Rooms para consultar:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+nombre,
+descripcion,
+precio,
+imagen
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**//.4 Crear una habitacion**
+https://rumix-backend.herokuapp.com/rooms/create
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**//.2 Leer una habitacion**
+https://rumix-backend.herokuapp.com/rooms/readall
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**//.5 Editar una habitacion**
+https://rumix-backend.herokuapp.com/rooms/edit/:id
