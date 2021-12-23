@@ -97,7 +97,7 @@ export default function Home() {
                   <div className="px-4 py-8 sm:px-10">
                     <div>
                       <p className="text-sm font-medium text-gray-700">
-                        Sign in with
+                        Iniciar sesión con
                       </p>
 
                       <div className="mt-1 grid grid-cols-3 gap-3">
@@ -174,7 +174,7 @@ export default function Home() {
                         <div className="w-full border-t border-gray-300" />
                       </div>
                       <div className="relative flex justify-center text-sm">
-                        <span className="px-2 bg-white text-gray-500">Or</span>
+                        <span className="px-2 bg-white text-gray-500">O</span>
                       </div>
                     </div>
 
@@ -205,7 +205,7 @@ export default function Home() {
 
                         <div>
                           <label htmlFor="mobile-or-email" className="sr-only">
-                            Mobile number or email
+                            Email
                           </label>
                           <input
                             onChange={(event) => {
@@ -252,26 +252,26 @@ export default function Home() {
                   </div>
                   <div className="px-4 py-6 bg-gray-50 border-t-2 border-gray-200 sm:px-10">
                     <p className="text-xs leading-5 text-gray-500">
-                      By signing up, you agree to our{" "}
+                      Al registrarte, estas aceptando nuestros{" "}
                       <a
                         href="#"
                         className="font-medium text-gray-900 hover:underline"
                       >
-                        Terms
+                        Términos
                       </a>
                       ,{" "}
                       <a
                         href="#"
                         className="font-medium text-gray-900 hover:underline"
                       >
-                        Data Policy
+                        Política de Datos
                       </a>{" "}
-                      and{" "}
+                      y{" "}
                       <a
                         href="#"
                         className="font-medium text-gray-900 hover:underline"
                       >
-                        Cookies Policy
+                        Política de Cookies
                       </a>
                       .
                     </p>
